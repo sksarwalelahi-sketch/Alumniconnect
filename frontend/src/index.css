@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --brand-ink: #0b214a;
+        --brand-blue: #2563eb;
+        --brand-cyan: #0ea5e9;
+    }
+
+    body {
+        @apply text-gray-900 antialiased;
+        background:
+            radial-gradient(circle at 8% 8%, rgba(37, 99, 235, 0.14), transparent 38%),
+            radial-gradient(circle at 92% 4%, rgba(14, 165, 233, 0.12), transparent 34%),
+            linear-gradient(180deg, #f5f9ff 0%, #f8fbff 45%, #f3f6fb 100%);
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+
+    .btn-primary {
+        @apply text-white focus:ring-primary-500 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5;
+        background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    }
+
+    .btn-secondary {
+        @apply bg-white/90 text-gray-800 border border-gray-200 hover:bg-white hover:border-gray-300 focus:ring-gray-500;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+    }
+
+    .btn-success {
+        @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
+    }
+
+    .input {
+        @apply w-full px-4 py-2.5 border border-gray-300 rounded-xl bg-white/95 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    }
+
+    .card {
+        @apply bg-white/95 rounded-2xl shadow-md shadow-slate-200/40 border border-white/70 p-6 backdrop-blur-sm;
+    }
+
+    .card-elevated {
+        @apply card transition-all duration-200 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-0.5;
+    }
+
+    .glass-panel {
+        @apply bg-white/85 backdrop-blur-md border border-white/70;
+    }
+
+    .icon-chip {
+        @apply inline-flex items-center justify-center rounded-xl bg-blue-100 text-blue-700;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-success {
+        @apply bg-green-100 text-green-800;
+    }
+
+    .badge-warning {
+        @apply bg-yellow-100 text-yellow-800;
+    }
+
+    .badge-danger {
+        @apply bg-red-100 text-red-800;
+    }
+
+    .badge-info {
+        @apply bg-blue-100 text-blue-800;
+    }
+
+    .badge-gray {
+        @apply bg-gray-100 text-gray-800;
+    }
+
+    .card table,
+    .card-elevated table {
+        @apply w-full;
+    }
+
+    .card thead tr,
+    .card-elevated thead tr {
+        @apply text-gray-500 border-b border-gray-200/80;
+    }
+
+    .card tbody tr,
+    .card-elevated tbody tr {
+        @apply border-b border-gray-100/80 transition-colors;
+    }
+
+    .card tbody tr:hover,
+    .card-elevated tbody tr:hover {
+        @apply bg-blue-50/35;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+}
+
+/* Animation classes */
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat specific styles */
+.chat-message-sent {
+    @apply bg-primary-600 text-white rounded-br-none;
+}
+
+.chat-message-received {
+    @apply bg-gray-100 text-gray-900 rounded-bl-none;
+}
+
+/* Match score indicator */
+.match-score-excellent {
+    @apply text-green-600 bg-green-50;
+}
+
+.match-score-good {
+    @apply text-blue-600 bg-blue-50;
+}
+
+.match-score-average {
+    @apply text-yellow-600 bg-yellow-50;
+}
+
+.match-score-low {
+    @apply text-red-600 bg-red-50;
+}
